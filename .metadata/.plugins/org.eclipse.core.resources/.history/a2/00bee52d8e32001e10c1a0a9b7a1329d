@@ -1,0 +1,47 @@
+package com.qa.pages;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class AutomationPages {
+	WebDriver driver;
+
+	@FindBy(xpath = "//input[contains(@id,'name')]")
+	WebElement name;
+	public WebElement getName() {
+		return name;
+	}
+
+	@FindBy(xpath = "//input[contains(@id,'email')]")
+	WebElement email;
+	public WebElement getEmail() {
+		return email;
+	}
+
+	@FindBy(css = ".wp-block-button__link.has-text-color.has-black-color")
+	WebElement SubmitButton;
+	public WebElement getSubmitButton() {
+		return SubmitButton;
+	}
+
+	@FindBy(xpath = "//textarea[contains(@id,'message')]")
+	WebElement message;
+	public WebElement getMessage() {
+		return message;
+	}
+
+	@FindBy(id = "contact-form-success-header")
+	WebElement SumittedMessage;
+	public WebElement getSubmittedMessage() {
+		return SumittedMessage;
+	}
+
+	public AutomationPages(WebDriver rDriver) {
+		this.driver = rDriver;
+		PageFactory.initElements(rDriver, this);
+
+	}
+}
+
+
